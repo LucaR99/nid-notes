@@ -55,5 +55,13 @@ class DatabaseHelper {
     return (await database)!.rawDelete('DELETE FROM notes WHERE id = ' + id.toString());
   }
 
+  Future<int> update(Note note) async {
+    // Get a reference to the database.
+    (await database)!.update('notes', note, id);
+
+  }
+
+
+
 
 }
